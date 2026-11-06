@@ -26,4 +26,4 @@ After pushing this project to GitHub:
 4. Select the `main` branch and `/ (root)` folder, then save.
 5. After GitHub Pages publishes the site, copy the URL shown on the Pages settings screen.
 
-Live site: **Add your GitHub Pages URL here after publishing.**
+Live site: https://damianm213.github.io/Project-4-Calculator/
