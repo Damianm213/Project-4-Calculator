@@ -1,0 +1,118 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 24px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+.calculator-screen {
+  width: 100%;
+  height: 94px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+}
+
+#display {
+  width: 100%;
+  overflow: hidden;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 42px;
+  font-weight: 300;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 98px);
+}
+
+.calculator-buttons button {
+  min-width: 0;
+  padding: 0;
+  border: 1px solid #222;
+  border-radius: 0;
+  background: #d1d2d3;
+  color: #000;
+  font: inherit;
+  font-size: 36px;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 80ms ease;
+}
+
+.calculator-buttons button:hover {
+  background: #b9bbbd;
+}
+
+.calculator-buttons button:active {
+  background: #a5a7a9;
+  transform: scale(0.97);
+}
+
+.calculator-buttons .clear {
+  grid-column: span 2;
+}
+
+.calculator-buttons .zero {
+  grid-column: span 3;
+}
+
+.calculator-buttons .operator-button {
+  background: #e3914d;
+  color: #fff;
+}
+
+.calculator-buttons .operator-button:hover {
+  background: #d47d36;
+}
+
+.calculator-buttons .operator-button:active {
+  background: #bd6928;
+}
+
+.calculator-buttons button:focus-visible {
+  outline: 3px solid #2463eb;
+  outline-offset: -4px;
+}
+
+@media (max-width: 440px) {
+  body {
+    padding: 12px;
+  }
+
+  .calculator-buttons {
+    grid-template-rows: repeat(5, min(24vw, 98px));
+  }
+
+  .calculator-buttons button {
+    font-size: clamp(24px, 9vw, 36px);
+  }
+
+  #display {
+    font-size: clamp(30px, 10vw, 42px);
+  }
+}
